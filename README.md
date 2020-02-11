@@ -1,6 +1,6 @@
 # Environmental Informatics
 
-## Assignment 04 - Introduction to the Linux Operating System
+## Assignment 05 - Complex Processing made Simple Using Shell Scripts
 
 ### Lab Objectives
 
@@ -55,4 +55,15 @@ To complete the assignment:
     
 **Files not in the repository subfolder Lab04, will not be graded.**
 
+**New material starts here**
+Assignment: Complete the tutorial http://ryanstutorials.net/bash-scripting-tutorial/ to learn the basics of the Bourne Again Shell (bash) scripting language (you may want to make use of the emacs editor for this, see below and the Linux book for information on that editor).   This is another programming language, much like Python, but shell scripting languages are an integral part of the Linux operating system. Once you have completed the tutorial, you should have the skills required to write a bash script to complete the following task.
 
+Start by downloading the tar file StationData into a new directory named for the current lab.
+Untar and uncompress the file using "tar -xvzf StationData.tgz"
+Start the emacs editor using "emacs &" from the terminal prompt.
+Create a new file called "<username>_Lab9.sh".
+The editor will likely start with a split window, you can switch to a single editing window by typing "<CTRL>   -x" followed by "1".  The   key <CTRL> and "x" key should be pressed together, then type the "1".  To resplit th   e window, type "<CTRL>-x" followed by "2".
+The emacs editor, unlike the vi editor you used last week provides a GUI, with buttons and pull-down menus to help find commands.  You Linux book and internet will also provide tables with other short cut keystrokes liked the one used to split and unsplit the window.
+When you save the new file, type " <CTRL>   -x" followed by "s" or click on the save icon, the new blank file will appear in the same directory from which you started the editor.  Which should be the same one where you untarred the   data file.
+Now write a bash shell script to search through the contents of the station files in the StationData directory (try: a loop) find those stations at altitudes over 200 feet (try: grep), and copy those at high elevation (try: cp) to a new directory called "HigherElevation" (try: mkdir).
+Submit the working code, with header and in-line comments, to Blackboard.  It must work with the file structure and file names that I have provided (so be sure to use relative, not absolute path names).
