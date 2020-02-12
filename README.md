@@ -5,8 +5,8 @@
 ### Lab Objectives
 
 On completion of this lab, students will be able to:
-1. Use basic commands in the Linux OS to navigate directories, view and edit files, search for files and file contents, and find help with commands; and
-2. Create simple scripts in Bash to encapsulate sequences of simple commands to streamline the completion of more complex tasks.
+1. Use basic commands in the Linux OS to automate complex processing tasks especially relating to a large number of files; and
+2. Create simple plots using the Generic Mapping Tools (gmt) and convert the resulting figures into other image formats.
 
 ### Reading Assignment
 
@@ -44,7 +44,7 @@ The script should do the following:
 - In order to copy a file from one directory to another, you will need to be able to extract just the filename (e.g., remove the path from the filename string).  There are many ways to do this, but [here is a page I think will be helpful](https://www.cyberciti.biz/faq/bash-get-basename-of-filename-or-directory-name/).
 - Note that Bash works only with integer math, which affects conditional statments in odd ways.  You cannot simply use `if [[ ${altitude} >= 200 ]]; then` to check the elevation, instead you will need to bring in additional tools.  You can do all of this using `awk`, but you can also use Bash's numerical context.  [Both of these methods are discussed on this site](https://stackoverflow.com/questions/8654051/how-to-compare-two-floating-point-numbers-in-bash), but there are other options as well.
 
-#### Part II: Plot the locations of all stations, while highlighting the higher evelation stations
+#### Part II: Plot the locations of all stations, while highlighting the higher elevation stations
 
 Once Part 1 is completed, you should have two directories in the repository: StationsData and HigherElevation.  The first contains all of the station files, while the second contains only those stations that are at or above 200 feet.  For this part of the assignment, you will use several additional Linux tools to construct a location plot, and convert that plot to an image file.  In particular, we will be using the [Generic Mapping Tools (GMT)](https://github.com/GenericMappingTools/gmt), a suite of 90+ command line tools for manipulating geographic and Cartesian data sets and producing PostScript illustrations.  This is my favorite tool for making presentation graphics - something we will get to later in the course.
 
@@ -76,7 +76,7 @@ Once Part 1 is completed, you should have two directories in the repository: Sta
    - The second line adds small black circles for all station locations.
    - The third line adds red circles for all higher elevation stations.
    - use the command `gv SoilMoistureStations.ps &` to view the figure.  Note that you can leave it running and use the "reload" button as you complete the next steps.
-   - Make the following changes to the code I gave you:
+   - Make the following changes to the code I gave you (use the links I provided to the on-line help pages, or the command plus `--help` to access local information; the `man` command does not work for the gmt module maintained by ITaP):
      - Fill the lakes with the color "blue".
      - Draw coastlines and political boundaries with the higher resolution database.
      - Make the symbol for the higher elevation stations smaller, so that you can see the underlying black circle.
