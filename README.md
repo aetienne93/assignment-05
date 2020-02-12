@@ -1,6 +1,6 @@
 # Environmental Informatics
 
-## Assignment 05 - Complex Processing made Simple Using Shell Scripts
+## Assignment 05 - Simplifying Complex Tasks with Shell Scripts
 
 ### Lab Objectives
 
