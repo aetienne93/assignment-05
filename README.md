@@ -66,11 +66,11 @@ Once Part 1 is completed, you should have two directories in the repository: Sta
    - The `gmt psxy` command will draw X-Y pairs of data in cartesian or geographic coordinates.  Details of the command and its options can be found at [http://gmt.soest.hawaii.edu/doc/5.3.2/psxy.html](http://gmt.soest.hawaii.edu/doc/5.3.2/psxy.html).
    - Add this block of code to your Bash script to generate a basic figure:
    
-```
-gmt pscoast -JU16/4i -R-93/-86/36/43 -B2f0.5 -Ia/blue -Na/orange -P -K -V > SoilMoistureStations.ps
-gmt psxy AllStation.xy -J -R -Sc0.15 -Gblack -K -O -V >> SoilMoistureStations.ps
-gmt psxy HEStation.xy -J -R -Sc0.15 -Gred -O -V >> SoilMoistureStations.ps
-```
+     ```
+     gmt pscoast -JU16/4i -R-93/-86/36/43 -B2f0.5 -Ia/blue -Na/orange -P -K -V > SoilMoistureStations.ps
+     gmt psxy AllStation.xy -J -R -Sc0.15 -Gblack -K -O -V >> SoilMoistureStations.ps
+     gmt psxy HEStation.xy -J -R -Sc0.15 -Gred -O -V >> SoilMoistureStations.ps
+     ```
 
    - The first line drawns rivers, coastlines and political boundaries.
    - The second line adds small black circles for all station locations.
@@ -81,7 +81,9 @@ gmt psxy HEStation.xy -J -R -Sc0.15 -Gred -O -V >> SoilMoistureStations.ps
      - Draw coastlines and political boundaries with the higher resolution database.
      - Make the symbol for the higher elevation stations smaller, so that you can see the underlying black circle.
      
- 1. Now that you have the figure drawn, lets clean it up and convert it to a TIFF image file
+#### Part III: Convert the figure into other imge formats
+
+1. Now that you have the figure drawn, lets clean it up and convert it to a TIFF image file
     - Use the command `ps2epsi` to convert the postscript file created by GMT into a standard conforming encapsulated postscript file that is correctly cropped to its bounding box and includes a preview image.  Use `man ps2epsi` or `ps2epsi --help` to learn about the command.
       - Try opening the new file "SoilMoistureStations.epsi" using `gv`, do you see any differences?
     - Finally, use the ImageMagic `convert` comamnd to change image file formats.
